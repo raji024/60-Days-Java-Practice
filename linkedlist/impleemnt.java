@@ -95,6 +95,17 @@ class LL {
         System.out.print(current.data);  // print the last node without arrow
         System.out.println();
     }
+    void sort(){
+        for(Node current = head; current!=null; current= current.next){
+            for(Node t = current.next;t!=null;t = t.next){
+                if(current.data > t.data){
+                    int temp  = current.data;
+                    current.data = t.data;
+                    t.data = temp;
+                }
+            }
+        }
+    }
 }
 
 public class impleemnt {
@@ -118,6 +129,8 @@ public class impleemnt {
         r.add_at_end(x);
         r.delete_atback();
         r.delete_atfront();
+        r.print();
+        r.sort();
         r.print();
         r.search(12);
          r.search(9);
