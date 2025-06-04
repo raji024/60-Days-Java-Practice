@@ -36,6 +36,48 @@ class LL {
         }
         current.next = n1;
     }
+    void delete_atfront(){
+        if(head == null){
+          System.out.print("Thus the linkedlist is empty");
+          return;
+        }
+        head = head.next;
+    }
+    void delete_atback(){
+        Node current = head;
+        if(head == null){
+            System.out.println("Thus the linkedList is empty");
+            return;
+
+        }
+        if(head.next == null){
+            head =null;
+            return;
+        }
+        while(current.next.next!=null){
+            current = current.next;
+        }
+        current.next = null;
+
+    }
+    void search(int key){
+        Node current = head;
+        int pos =0;
+        boolean found = false;
+        while(current!=null){
+             if(current.data == key){
+                System.out.println("the elmnt is found at:"+pos);
+                found = true;
+                break;
+             }
+             pos++;
+             current = current.next;
+             
+        }
+        if(!found){
+                System.out.println("the elemnt is found on linkedlist");
+             }
+    }
 
     // Print the linked list
     void print() {
@@ -51,6 +93,7 @@ class LL {
             current = current.next;
         }
         System.out.print(current.data);  // print the last node without arrow
+        System.out.println();
     }
 }
 
@@ -71,6 +114,13 @@ public class impleemnt {
         }
 
         System.out.println("Linked List:");
+        
+        r.add_at_end(x);
+        r.delete_atback();
+        r.delete_atfront();
         r.print();
+        r.search(12);
+         r.search(9);
+
     }
 }
