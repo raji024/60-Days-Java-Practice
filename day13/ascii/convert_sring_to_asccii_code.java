@@ -9,5 +9,6 @@ public class convert_sring_to_asccii_code {
             int b = ch;
             System.out.print(b+" ");
         }
+        
     }
 }
