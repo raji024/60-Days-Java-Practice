@@ -2,7 +2,7 @@ package tree;
 
 import java.util.*;
 
-// Node class for binary tree
+// Node class representing each node of the binary tree
 class Node {
     int data;
     Node left;
@@ -15,11 +15,11 @@ class Node {
     }
 }
 
-// Binary Tree class with build and utility methods
+// Class containing binary tree logic
 class BT {
     int idx = -1;
 
-    // Build binary tree from preorder array with -1 as null
+    // Build binary tree from preorder array (-1 means null)
     public Node buildTree(int[] nodes) {
         idx++;
         if (idx >= nodes.length || nodes[idx] == -1) {
@@ -35,10 +35,26 @@ class BT {
     // Preorder traversal
     public void preorder(Node root) {
         if (root == null) return;
-
         System.out.print(root.data + " ");
         preorder(root.left);
         preorder(root.right);
+    }
+    public void inorder(Node node){
+        if(node == null){
+            return;
+        }
+        inorder(node.left);
+        System.out.print(node.data+" ");
+        inorder(node.right);
+        
+    }
+    public void postorder(Node node){
+        if(node == null){
+            return ;
+        }
+        postorder(node.left);
+        postorder(node.right);
+        System.out.print(node.data+" ");
     }
 
     // Height of tree
@@ -49,7 +65,7 @@ class BT {
         return Math.max(left, right) + 1;
     }
 
-    // Size of tree (number of nodes)
+    // Size of tree (total number of nodes)
     public int size(Node node) {
         if (node == null) return 0;
         int left = size(node.left);
@@ -57,7 +73,7 @@ class BT {
         return left + right + 1;
     }
 
-    // Sum of all nodes in tree
+    // Sum of all node values
     public int sum(Node node) {
         if (node == null) return 0;
         int left = sum(node.left);
@@ -66,8 +82,8 @@ class BT {
     }
 }
 
-// Main class
-public class tree_impli2 {
+// Main class containing the entry point
+public class tree_implementation {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -85,6 +101,12 @@ public class tree_impli2 {
 
         System.out.println("\nPreorder Traversal of the constructed tree:");
         tree.preorder(root);
+        System.out.println();
+        System.out.println("Inorder Traversal of a tree:");
+        tree.inorder(root);
+        System.out.println();
+        System.out.print("PostOrder traversal of the binary tree");
+        tree.postorder(root);
 
         System.out.println("\nHeight of tree: " + tree.height(root));
         System.out.println("Size of tree: " + tree.size(root));
