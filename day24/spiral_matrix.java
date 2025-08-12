@@ -14,6 +14,8 @@ public class spiral_matrix {
         int r_e = x-1;
         int c_s = 0;
         int c_e = y-1;
-        while(r_s<=r_e && c_s<=)
+        while(r_s<=r_e && c_s<=c_e){
+            
+        }
     }
 }
