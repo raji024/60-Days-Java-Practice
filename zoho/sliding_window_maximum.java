@@ -6,7 +6,20 @@ public class sliding_window_maximum {
         int x = sc.nextInt();
         int arr[] = new int[x];
         for(int i=0;i<x;i++){
-            arr[i] = sc.nextInt()''
+            arr[i] = sc.nextInt();
+
         }
+        int k = sc.nextInt();
+        ArrayList<Integer> n = new ArrayList<>();
+        for(int i=0;i<=x-k;i++){
+             int num = arr[i];
+             for(int j =i;j<i+k;j++){
+                if(arr[j] > num){
+                    num = arr[j];
+                }
+             }
+             n.add(num);
+        }
+        System.out.println(n);
     }
 }
