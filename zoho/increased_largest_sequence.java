@@ -16,7 +16,7 @@ public class increased_largest_sequence {
         for(int i=1;i<x;i++){
             for(int j=0;j<i;j++){
                 if(arr[i]> arr[j]){
-                    dp[i] = Math.max(arr[i],arr[j+1]);
+                    dp[i] = Math.max(arr[i],arr[j]+1);
                 }
             }
             maxlen

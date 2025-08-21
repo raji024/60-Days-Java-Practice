@@ -16,6 +16,8 @@ public class grouped_anagram {
         String c = new String(ch);
         if(!m.containsKey(c)){
             m.put(c,new ArrayList<>());
+
+            
         }
         m.get(c).add(num);
        }
