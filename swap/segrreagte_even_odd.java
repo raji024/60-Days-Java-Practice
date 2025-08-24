@@ -8,6 +8,9 @@ public class segrreagte_even_odd {
         for(int i=0;i<x;i++){
             arr[i] = sc.nextInt();
         }
+        int o=0;
+        int e =0;
+        
         for(int i=0;i<x;i++){
             for(int j=i+1;j<x;j++){
                 if((arr[i]%2==0) && (arr[j]%2!=0)){
