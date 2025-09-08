@@ -22,7 +22,7 @@ public class leetcode_1343 {
            f++;
         }
         for(int i=k;i<x;i++){
-            sum = sum+ arr[i-k]+arr[i];
+            sum = sum- arr[i-k]+arr[i];
             if(sum/k >=t){
                 f++;
             }
