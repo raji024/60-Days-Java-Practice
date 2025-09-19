@@ -15,7 +15,7 @@ public class container_with_atomts_water {
             int width = right-left;
             int area = h * width;
             max = Math.max(area,max);
-            if(arr[left]< arr[right]){
+            if(arr[left]<arr[right]){
                 left++;
             }else{
                 right--;
