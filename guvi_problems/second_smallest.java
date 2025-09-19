@@ -8,5 +8,15 @@ public class second_smallest {
         for(int i=0;i<x;i++){
             arr[i] = sc.nextInt();
         }
+        Arrays.sort(arr);
+        int f = arr[0];
+        int s_min = Integer.MAX_VALUE;
+        for(int i=1;i<x;i++){
+            if(arr[i]!= f){
+                s_min = arr[i];
+                break;
+            }
+        }
+        System.out.println(s_min);
     }
 }
